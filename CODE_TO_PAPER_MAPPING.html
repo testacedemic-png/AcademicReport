@@ -21,131 +21,45 @@
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: linear-gradient(180deg, #f9fbff 0%, #f4f7fb 100%);
-      color: var(--text);
-      font: 15px/1.7 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
-    .shell {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 28px;
-    }
-    .hero {
-      background: linear-gradient(135deg, #ffffff 0%, #f5f9ff 100%);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      box-shadow: var(--shadow);
-      padding: 32px;
-      margin-bottom: 24px;
-    }
-    .eyebrow {
-      display: inline-block;
-      background: var(--accent-soft);
-      color: var(--accent);
-      border: 1px solid #cfe0ff;
-      border-radius: 999px;
-      padding: 6px 12px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: .03em;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
+    body { margin: 0; background: linear-gradient(180deg, #f9fbff 0%, #f4f7fb 100%); color: var(--text); font: 15px/1.7 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    .shell { max-width: 1400px; margin: 0 auto; padding: 28px; }
+    .hero { background: linear-gradient(135deg, #ffffff 0%, #f5f9ff 100%); border: 1px solid var(--border); border-radius: 24px; box-shadow: var(--shadow); padding: 32px; margin-bottom: 24px; }
+    .eyebrow { display: inline-block; background: var(--accent-soft); color: var(--accent); border: 1px solid #cfe0ff; border-radius: 999px; padding: 6px 12px; font-size: 12px; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; margin-bottom: 14px; }
     h1, h2, h3 { line-height: 1.2; margin: 0 0 12px; }
     h1 { font-size: 34px; letter-spacing: -0.02em; }
     h2 { font-size: 24px; margin-top: 6px; }
     p, li { color: var(--muted); }
-    .meta {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 14px;
-      margin-top: 22px;
-    }
-    .meta-card, .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-    .meta-card {
-      padding: 16px 18px;
-    }
-    .label {
-      display: block;
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .04em;
-      margin-bottom: 6px;
-    }
-    .card {
-      padding: 24px;
-      margin: 20px 0;
-    }
+    .meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 22px; }
+    .meta-card, .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); }
+    .meta-card { padding: 16px 18px; }
+    .label { display: block; color: var(--accent); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 6px; }
+    .card { padding: 24px; margin: 20px 0; }
     .summary-list li { margin: 8px 0; }
     .good { color: var(--good); font-weight: 600; }
     .warn { color: var(--warn); font-weight: 600; }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .table-wrap {
-      overflow: auto;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      background: var(--surface);
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      min-width: 980px;
-    }
-    th, td {
-      border-bottom: 1px solid var(--border);
-      padding: 14px 16px;
-      vertical-align: top;
-      text-align: left;
-    }
-    th {
-      position: sticky;
-      top: 0;
-      background: #f6f9fe;
-      color: #334155;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: .04em;
-      z-index: 1;
-    }
+    .table-wrap { overflow: auto; border: 1px solid var(--border); border-radius: 16px; background: var(--surface); }
+    table { width: 100%; border-collapse: collapse; min-width: 980px; }
+    th, td { border-bottom: 1px solid var(--border); padding: 14px 16px; vertical-align: top; text-align: left; }
+    th { position: sticky; top: 0; background: #f6f9fe; color: #334155; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; z-index: 1; }
     tr:nth-child(even) td { background: #fcfdff; }
-    code {
-      background: #eef3fb;
-      border: 1px solid #dde7f6;
-      border-radius: 8px;
-      padding: 2px 6px;
-      color: #1e3a8a;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 13px;
-      word-break: break-word;
-    }
-    .footer-note {
-      font-size: 13px;
-      color: #6b7280;
-    }
+    code { background: #eef3fb; border: 1px solid #dde7f6; border-radius: 8px; padding: 2px 6px; color: #1e3a8a; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13px; word-break: break-word; }
+    .footer-note { font-size: 13px; color: #6b7280; }
   </style>
 </head>
 <body>
   <div class="shell">
     <section class="hero">
       <div class="eyebrow">Shadow-PI Report</div>
-      <h1>VOID: Code-to-Paper Mapping</h1>
+      <h1><a href="https://arxiv.org/abs/2604.02296">VOID: Code-to-Paper Mapping</a></h1>
       <p>
-        A structured mapping between the paper <strong>“VOID: Video Object and Interaction Deletion”</strong>
+        A structured mapping between the paper <a href="https://arxiv.org/abs/2604.02296"><strong>“VOID: Video Object and Interaction Deletion”</strong></a>
         and its implementation in the public repository. This page highlights the core logic path,
         exact source references, and the most important reproducibility-sensitive engineering details.
       </p>
       <div class="meta">
-        <div class="meta-card"><span class="label">Paper</span>VOID: Video Object and Interaction Deletion</div>
+        <div class="meta-card"><span class="label">Paper</span><a href="https://arxiv.org/abs/2604.02296">VOID: Video Object and Interaction Deletion</a></div>
         <div class="meta-card"><span class="label">arXiv</span><a href="https://arxiv.org/abs/2604.02296">2604.02296</a></div>
         <div class="meta-card"><span class="label">Repository</span><a href="https://github.com/Netflix/void-model">Netflix/void-model</a></div>
         <div class="meta-card"><span class="label">Focus</span>Interaction-aware masking, inpainting, refinement</div>
@@ -178,35 +92,35 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td>Affected-region reasoning prompt</td><td>Builds the VLM prompt that asks what happens when the primary object is removed, separating integral belongings from affected objects.</td><td><code>VLM-MASK-REASONER/stage2_vlm_analysis.py#L256-L337</code></td></tr>
-            <tr><td>Physical-vs-visual affected object taxonomy</td><td>Distinguishes visual artifacts from physical objects and encodes movement logic via support vs interaction reasoning.</td><td><code>VLM-MASK-REASONER/stage2_vlm_analysis.py#L318-L376</code></td></tr>
-            <tr><td>Quadmask semantics</td><td>Declares final mask values: <code>0</code> primary, <code>63</code> overlap, <code>127</code> affected, <code>255</code> background.</td><td><code>VLM-MASK-REASONER/stage4_combine_masks.py#L1-L12</code></td></tr>
-            <tr><td>Quadmask merge rule</td><td>Implements exact merge rules from black/grey masks: <code>(0,255)-&gt;0</code>, <code>(255,127)-&gt;127</code>, <code>(0,127)-&gt;63</code>, <code>(255,255)-&gt;255</code>.</td><td><code>VLM-MASK-REASONER/stage4_combine_masks.py#L20-L49</code></td></tr>
-            <tr><td>First-frame heuristic</td><td>Clears near-grey pixels on frame 0 to background so affected-region mask values do not survive in the first exported frame.</td><td><code>VLM-MASK-REASONER/stage4_combine_masks.py#L101-L115</code></td></tr>
-            <tr><td>Prompt source used at inference</td><td>Loads only <code>prompt.json["bg"]</code> as the text condition.</td><td><code>videox_fun/utils/utils.py#L335-L337</code></td></tr>
-            <tr><td>Input video loading</td><td>Reads <code>input_video.mp4</code>, truncates to <code>max_video_length</code>, converts to tensor, and resizes to configured dimensions.</td><td><code>videox_fun/utils/utils.py#L338-L343</code></td></tr>
-            <tr><td>Quadmask ingestion and requantization</td><td>Reads <code>quadmask_*.mp4</code> and re-quantizes interpolated values back to <code>0/63/127/255</code>.</td><td><code>videox_fun/utils/utils.py#L374-L393</code></td></tr>
-            <tr><td>Mask polarity inversion</td><td>Applies <code>255 - input_mask</code> after requantization before normalization.</td><td><code>videox_fun/utils/utils.py#L387-L393</code></td></tr>
-            <tr><td>Temporal padding</td><td>Pads video and mask to satisfy temporal window requirements before inference.</td><td><code>videox_fun/utils/utils.py#L409-L413</code></td></tr>
-            <tr><td>Inference config: quadmask mode</td><td>Enables quadmask inference and VAE-mask conditioning by default.</td><td><code>config/quadmask_cogvideox.py#L33-L49</code></td></tr>
-            <tr><td>Inference config: generation hyperparameters</td><td>Sets <code>guidance_scale=1.0</code>, <code>num_inference_steps=50</code>, <code>temporal_window_size=85</code>.</td><td><code>config/quadmask_cogvideox.py#L40-L47</code></td></tr>
-            <tr><td>Inference config: system/GPU assumptions</td><td>Defaults execution to <code>cuda</code> with offload-oriented memory configuration.</td><td><code>config/quadmask_cogvideox.py#L52-L76</code></td></tr>
-            <tr><td>Custom transformer loading</td><td>Loads CogVideoX transformer with <code>use_vae_mask</code> / <code>stack_mask</code> options.</td><td><code>inference/cogvideox_fun/predict_v2v.py#L40-L50</code></td></tr>
-            <tr><td>Patch embedding adaptation</td><td>Adapts <code>patch_embed.proj.weight</code> when checkpoint and current mask-conditioned channel counts differ.</td><td><code>inference/cogvideox_fun/predict_v2v.py#L62-L85</code></td></tr>
-            <tr><td>Video + mask assembly for inference</td><td>Calls <code>get_video_mask_input(...)</code> with quadmask mode enabled.</td><td><code>inference/cogvideox_fun/predict_v2v.py#L139-L157</code></td></tr>
-            <tr><td>Actual forward pass inputs</td><td>Feeds prompt, video, mask video, guidance scale, denoise strength, and VAE-mask flags into the pipeline.</td><td><code>inference/cogvideox_fun/predict_v2v.py#L172-L184</code></td></tr>
-            <tr><td>Step-count discrepancy</td><td>Pass-1 inference hardcodes <code>30</code> denoising steps even though config exposes <code>50</code>.</td><td><code>inference/cogvideox_fun/predict_v2v.py#L177-L179</code> and <code>config/quadmask_cogvideox.py#L43-L45</code></td></tr>
-            <tr><td>Inpaint mask preprocessing</td><td>Preprocesses <code>mask_video</code> and discretizes it according to trimask/binary logic inside the inpaint pipeline.</td><td><code>videox_fun/pipeline/pipeline_cogvideox_fun_inpaint.py#L970-L989</code></td></tr>
-            <tr><td>VAE-mask conditioning path</td><td>Encodes mask/video into latent conditioning and concatenates them as <code>inpaint_latents</code> when the transformer expects extra channels.</td><td><code>videox_fun/pipeline/pipeline_cogvideox_fun_inpaint.py#L991-L1063</code></td></tr>
-            <tr><td>CFG / Imagen-style guidance</td><td>Uses classifier-free guidance and explicitly documents the formulation as Imagen Eq. 2 style guidance.</td><td><code>videox_fun/pipeline/pipeline_cogvideox_fun_inpaint.py#L806-L809</code>, <code>#L888-L892</code>, <code>#L1148-L1155</code></td></tr>
-            <tr><td>Temporal multidiffusion behavior</td><td>Switches to temporal multidiffusion when latent sequence exceeds the temporal window.</td><td><code>videox_fun/pipeline/pipeline_cogvideox_fun_inpaint.py#L1092-L1100</code></td></tr>
-            <tr><td>Pass-2 refinement concept</td><td>Defines second-pass inference using warped noise produced from pass-1 outputs.</td><td><code>inference/cogvideox_fun/inference_with_pass1_warped_noise.py#L1-L16</code></td></tr>
-            <tr><td>Pass-1 output discovery</td><td>Finds pass-1 output videos matching the expected naming convention.</td><td><code>inference/cogvideox_fun/inference_with_pass1_warped_noise.py#L42-L72</code></td></tr>
-            <tr><td>Warped-noise generation</td><td>Runs <code>make_warped_noise.py</code> on pass-1 video outputs and caches <code>noises.npy</code>.</td><td><code>inference/cogvideox_fun/inference_with_pass1_warped_noise.py#L75-L136</code></td></tr>
-            <tr><td>Warped-noise resize into latent space</td><td>Loads cached noise, converts layout if needed, resizes temporally/spatially, and converts it to a torch tensor.</td><td><code>inference/cogvideox_fun/inference_with_pass1_warped_noise.py#L139-L196</code></td></tr>
-            <tr><td>Pass-2 default hyperparameters</td><td>Uses <code>guidance_scale=6.0</code>, <code>num_inference_steps=50</code>, and <code>temporal_window_size=85</code> by default.</td><td><code>inference/cogvideox_fun/inference_with_pass1_warped_noise.py#L219-L239</code></td></tr>
-            <tr><td>Training-side quadmask requantization</td><td>Re-quantizes interpolated masks back to discrete quadmask levels in the training dataloader.</td><td><code>scripts/cogvideox_fun/train.py#L1234-L1243</code></td></tr>
-            <tr><td>Warped-noise training support</td><td>Supports carrying warped noise through batch collation for training-time ablations.</td><td><code>scripts/cogvideox_fun/train_warped_noise.py#L1257-L1287</code>, <code>#L1319-L1323</code></td></tr>
+            <tr><td>Affected-region reasoning prompt</td><td>Builds the VLM prompt that asks what happens when the primary object is removed, separating integral belongings from affected objects.</td><td><a href="https://github.com/Netflix/void-model/blob/main/VLM-MASK-REASONER/stage2_vlm_analysis.py#L256-L337"><code>VLM-MASK-REASONER/stage2_vlm_analysis.py#L256-L337</code></a></td></tr>
+            <tr><td>Physical-vs-visual affected object taxonomy</td><td>Distinguishes visual artifacts from physical objects and encodes movement logic via support vs interaction reasoning.</td><td><a href="https://github.com/Netflix/void-model/blob/main/VLM-MASK-REASONER/stage2_vlm_analysis.py#L318-L376"><code>VLM-MASK-REASONER/stage2_vlm_analysis.py#L318-L376</code></a></td></tr>
+            <tr><td>Quadmask semantics</td><td>Declares final mask values: <code>0</code> primary, <code>63</code> overlap, <code>127</code> affected, <code>255</code> background.</td><td><a href="https://github.com/Netflix/void-model/blob/main/VLM-MASK-REASONER/stage4_combine_masks.py#L1-L12"><code>VLM-MASK-REASONER/stage4_combine_masks.py#L1-L12</code></a></td></tr>
+            <tr><td>Quadmask merge rule</td><td>Implements exact merge rules from black/grey masks: <code>(0,255)-&gt;0</code>, <code>(255,127)-&gt;127</code>, <code>(0,127)-&gt;63</code>, <code>(255,255)-&gt;255</code>.</td><td><a href="https://github.com/Netflix/void-model/blob/main/VLM-MASK-REASONER/stage4_combine_masks.py#L20-L49"><code>VLM-MASK-REASONER/stage4_combine_masks.py#L20-L49</code></a></td></tr>
+            <tr><td>First-frame heuristic</td><td>Clears near-grey pixels on frame 0 to background so affected-region mask values do not survive in the first exported frame.</td><td><a href="https://github.com/Netflix/void-model/blob/main/VLM-MASK-REASONER/stage4_combine_masks.py#L101-L115"><code>VLM-MASK-REASONER/stage4_combine_masks.py#L101-L115</code></a></td></tr>
+            <tr><td>Prompt source used at inference</td><td>Loads only <code>prompt.json["bg"]</code> as the text condition.</td><td><a href="https://github.com/Netflix/void-model/blob/main/videox_fun/utils/utils.py#L335-L337"><code>videox_fun/utils/utils.py#L335-L337</code></a></td></tr>
+            <tr><td>Input video loading</td><td>Reads <code>input_video.mp4</code>, truncates to <code>max_video_length</code>, converts to tensor, and resizes to configured dimensions.</td><td><a href="https://github.com/Netflix/void-model/blob/main/videox_fun/utils/utils.py#L338-L343"><code>videox_fun/utils/utils.py#L338-L343</code></a></td></tr>
+            <tr><td>Quadmask ingestion and requantization</td><td>Reads <code>quadmask_*.mp4</code> and re-quantizes interpolated values back to <code>0/63/127/255</code>.</td><td><a href="https://github.com/Netflix/void-model/blob/main/videox_fun/utils/utils.py#L374-L393"><code>videox_fun/utils/utils.py#L374-L393</code></a></td></tr>
+            <tr><td>Mask polarity inversion</td><td>Applies <code>255 - input_mask</code> after requantization before normalization.</td><td><a href="https://github.com/Netflix/void-model/blob/main/videox_fun/utils/utils.py#L387-L393"><code>videox_fun/utils/utils.py#L387-L393</code></a></td></tr>
+            <tr><td>Temporal padding</td><td>Pads video and mask to satisfy temporal window requirements before inference.</td><td><a href="https://github.com/Netflix/void-model/blob/main/videox_fun/utils/utils.py#L409-L413"><code>videox_fun/utils/utils.py#L409-L413</code></a></td></tr>
+            <tr><td>Inference config: quadmask mode</td><td>Enables quadmask inference and VAE-mask conditioning by default.</td><td><a href="https://github.com/Netflix/void-model/blob/main/config/quadmask_cogvideox.py#L33-L49"><code>config/quadmask_cogvideox.py#L33-L49</code></a></td></tr>
+            <tr><td>Inference config: generation hyperparameters</td><td>Sets <code>guidance_scale=1.0</code>, <code>num_inference_steps=50</code>, <code>temporal_window_size=85</code>.</td><td><a href="https://github.com/Netflix/void-model/blob/main/config/quadmask_cogvideox.py#L40-L47"><code>config/quadmask_cogvideox.py#L40-L47</code></a></td></tr>
+            <tr><td>Inference config: system/GPU assumptions</td><td>Defaults execution to <code>cuda</code> with offload-oriented memory configuration.</td><td><a href="https://github.com/Netflix/void-model/blob/main/config/quadmask_cogvideox.py#L52-L76"><code>config/quadmask_cogvideox.py#L52-L76</code></a></td></tr>
+            <tr><td>Custom transformer loading</td><td>Loads CogVideoX transformer with <code>use_vae_mask</code> / <code>stack_mask</code> options.</td><td><a href="https://github.com/Netflix/void-model/blob/main/inference/cogvideox_fun/predict_v2v.py#L40-L50"><code>inference/cogvideox_fun/predict_v2v.py#L40-L50</code></a></td></tr>
+            <tr><td>Patch embedding adaptation</td><td>Adapts <code>patch_embed.proj.weight</code> when checkpoint and current mask-conditioned channel counts differ.</td><td><a href="https://github.com/Netflix/void-model/blob/main/inference/cogvideox_fun/predict_v2v.py#L62-L85"><code>inference/cogvideox_fun/predict_v2v.py#L62-L85</code></a></td></tr>
+            <tr><td>Video + mask assembly for inference</td><td>Calls <code>get_video_mask_input(...)</code> with quadmask mode enabled.</td><td><a href="https://github.com/Netflix/void-model/blob/main/inference/cogvideox_fun/predict_v2v.py#L139-L157"><code>inference/cogvideox_fun/predict_v2v.py#L139-L157</code></a></td></tr>
+            <tr><td>Actual forward pass inputs</td><td>Feeds prompt, video, mask video, guidance scale, denoise strength, and VAE-mask flags into the pipeline.</td><td><a href="https://github.com/Netflix/void-model/blob/main/inference/cogvideox_fun/predict_v2v.py#L172-L184"><code>inference/cogvideox_fun/predict_v2v.py#L172-L184</code></a></td></tr>
+            <tr><td>Step-count discrepancy</td><td>Pass-1 inference hardcodes <code>30</code> denoising steps even though config exposes <code>50</code>.</td><td><a href="https://github.com/Netflix/void-model/blob/main/inference/cogvideox_fun/predict_v2v.py#L177-L179"><code>inference/cogvideox_fun/predict_v2v.py#L177-L179</code></a> and <a href="https://github.com/Netflix/void-model/blob/main/config/quadmask_cogvideox.py#L43-L45"><code>config/quadmask_cogvideox.py#L43-L45</code></a></td></tr>
+            <tr><td>Inpaint mask preprocessing</td><td>Preprocesses <code>mask_video</code> and discretizes it according to trimask/binary logic inside the inpaint pipeline.</td><td><a href="https://github.com/Netflix/void-model/blob/main/videox_fun/pipeline/pipeline_cogvideox_fun_inpaint.py#L970-L989"><code>videox_fun/pipeline/pipeline_cogvideox_fun_inpaint.py#L970-L989</code></a></td></tr>
+            <tr><td>VAE-mask conditioning path</td><td>Encodes mask/video into latent conditioning and concatenates them as <code>inpaint_latents</code> when the transformer expects extra channels.</td><td><a href="https://github.com/Netflix/void-model/blob/main/videox_fun/pipeline/pipeline_cogvideox_fun_inpaint.py#L991-L1063"><code>videox_fun/pipeline/pipeline_cogvideox_fun_inpaint.py#L991-L1063</code></a></td></tr>
+            <tr><td>CFG / Imagen-style guidance</td><td>Uses classifier-free guidance and explicitly documents the formulation as Imagen Eq. 2 style guidance.</td><td><a href="https://github.com/Netflix/void-model/blob/main/videox_fun/pipeline/pipeline_cogvideox_fun_inpaint.py#L806-L809"><code>videox_fun/pipeline/pipeline_cogvideox_fun_inpaint.py#L806-L809</code></a>, <a href="https://github.com/Netflix/void-model/blob/main/videox_fun/pipeline/pipeline_cogvideox_fun_inpaint.py#L888-L892"><code>#L888-L892</code></a>, <a href="https://github.com/Netflix/void-model/blob/main/videox_fun/pipeline/pipeline_cogvideox_fun_inpaint.py#L1148-L1155"><code>#L1148-L1155</code></a></td></tr>
+            <tr><td>Temporal multidiffusion behavior</td><td>Switches to temporal multidiffusion when latent sequence exceeds the temporal window.</td><td><a href="https://github.com/Netflix/void-model/blob/main/videox_fun/pipeline/pipeline_cogvideox_fun_inpaint.py#L1092-L1100"><code>videox_fun/pipeline/pipeline_cogvideox_fun_inpaint.py#L1092-L1100</code></a></td></tr>
+            <tr><td>Pass-2 refinement concept</td><td>Defines second-pass inference using warped noise produced from pass-1 outputs.</td><td><a href="https://github.com/Netflix/void-model/blob/main/inference/cogvideox_fun/inference_with_pass1_warped_noise.py#L1-L16"><code>inference/cogvideox_fun/inference_with_pass1_warped_noise.py#L1-L16</code></a></td></tr>
+            <tr><td>Pass-1 output discovery</td><td>Finds pass-1 output videos matching the expected naming convention.</td><td><a href="https://github.com/Netflix/void-model/blob/main/inference/cogvideox_fun/inference_with_pass1_warped_noise.py#L42-L72"><code>inference/cogvideox_fun/inference_with_pass1_warped_noise.py#L42-L72</code></a></td></tr>
+            <tr><td>Warped-noise generation</td><td>Runs <code>make_warped_noise.py</code> on pass-1 video outputs and caches <code>noises.npy</code>.</td><td><a href="https://github.com/Netflix/void-model/blob/main/inference/cogvideox_fun/inference_with_pass1_warped_noise.py#L75-L136"><code>inference/cogvideox_fun/inference_with_pass1_warped_noise.py#L75-L136</code></a></td></tr>
+            <tr><td>Warped-noise resize into latent space</td><td>Loads cached noise, converts layout if needed, resizes temporally/spatially, and converts it to a torch tensor.</td><td><a href="https://github.com/Netflix/void-model/blob/main/inference/cogvideox_fun/inference_with_pass1_warped_noise.py#L139-L196"><code>inference/cogvideox_fun/inference_with_pass1_warped_noise.py#L139-L196</code></a></td></tr>
+            <tr><td>Pass-2 default hyperparameters</td><td>Uses <code>guidance_scale=6.0</code>, <code>num_inference_steps=50</code>, and <code>temporal_window_size=85</code> by default.</td><td><a href="https://github.com/Netflix/void-model/blob/main/inference/cogvideox_fun/inference_with_pass1_warped_noise.py#L219-L239"><code>inference/cogvideox_fun/inference_with_pass1_warped_noise.py#L219-L239</code></a></td></tr>
+            <tr><td>Training-side quadmask requantization</td><td>Re-quantizes interpolated masks back to discrete quadmask levels in the training dataloader.</td><td><a href="https://github.com/Netflix/void-model/blob/main/scripts/cogvideox_fun/train.py#L1234-L1243"><code>scripts/cogvideox_fun/train.py#L1234-L1243</code></a></td></tr>
+            <tr><td>Warped-noise training support</td><td>Supports carrying warped noise through batch collation for training-time ablations.</td><td><a href="https://github.com/Netflix/void-model/blob/main/scripts/cogvideox_fun/train_warped_noise.py#L1257-L1287"><code>scripts/cogvideox_fun/train_warped_noise.py#L1257-L1287</code></a>, <a href="https://github.com/Netflix/void-model/blob/main/scripts/cogvideox_fun/train_warped_noise.py#L1319-L1323"><code>#L1319-L1323</code></a></td></tr>
           </tbody>
         </table>
       </div>

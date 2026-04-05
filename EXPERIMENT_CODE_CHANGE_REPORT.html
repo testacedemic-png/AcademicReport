@@ -21,132 +21,48 @@
       --radius: 18px;
     }
     * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: linear-gradient(180deg, #f9fbff 0%, #f4f7fb 100%);
-      color: var(--text);
-      font: 15px/1.7 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
+    body { margin: 0; background: linear-gradient(180deg, #f9fbff 0%, #f4f7fb 100%); color: var(--text); font: 15px/1.7 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
     .shell { max-width: 1250px; margin: 0 auto; padding: 28px; }
-    .hero {
-      background: linear-gradient(135deg, #ffffff 0%, #f5f9ff 100%);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      box-shadow: var(--shadow);
-      padding: 32px;
-      margin-bottom: 24px;
-    }
-    .eyebrow {
-      display: inline-block;
-      background: var(--accent-soft);
-      color: var(--accent);
-      border: 1px solid #d6e5ff;
-      border-radius: 999px;
-      padding: 6px 12px;
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .04em;
-      margin-bottom: 14px;
-    }
+    .hero { background: linear-gradient(135deg, #ffffff 0%, #f5f9ff 100%); border: 1px solid var(--border); border-radius: 24px; box-shadow: var(--shadow); padding: 32px; margin-bottom: 24px; }
+    .eyebrow { display: inline-block; background: var(--accent-soft); color: var(--accent); border: 1px solid #d6e5ff; border-radius: 999px; padding: 6px 12px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 14px; }
     h1, h2, h3 { margin: 0 0 12px; line-height: 1.2; }
     h1 { font-size: 34px; letter-spacing: -0.02em; }
     h2 { font-size: 24px; }
     h3 { font-size: 20px; color: var(--accent); margin-top: 8px; }
     p, li { color: var(--muted); }
-    .meta {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 14px;
-      margin-top: 22px;
-    }
-    .meta-card, .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
+    .meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 22px; }
+    .meta-card, .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); }
     .meta-card { padding: 16px 18px; }
-    .label {
-      display: block;
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .04em;
-      margin-bottom: 6px;
-    }
+    .label { display: block; color: var(--accent); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 6px; }
     .card { padding: 24px; margin: 20px 0; }
-    .exp {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-left: 5px solid var(--accent);
-      border-radius: 16px;
-      padding: 20px;
-      margin: 18px 0;
-    }
-    code {
-      background: #eef3fb;
-      border: 1px solid #dde7f6;
-      border-radius: 8px;
-      padding: 2px 6px;
-      color: #1e3a8a;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 13px;
-      word-break: break-word;
-    }
-    .effort {
-      display: inline-block;
-      font-weight: 700;
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-size: 12px;
-      margin-top: 10px;
-      border: 1px solid transparent;
-    }
+    .exp { background: var(--surface); border: 1px solid var(--border); border-left: 5px solid var(--accent); border-radius: 16px; padding: 20px; margin: 18px 0; }
+    code { background: #eef3fb; border: 1px solid #dde7f6; border-radius: 8px; padding: 2px 6px; color: #1e3a8a; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13px; word-break: break-word; }
+    .effort { display: inline-block; font-weight: 700; padding: 6px 12px; border-radius: 999px; font-size: 12px; margin-top: 10px; border: 1px solid transparent; }
     .low { background: #ecfdf5; color: var(--green); border-color: #ccefe5; }
     .med { background: #fff7ed; color: var(--yellow); border-color: #f6dfc2; }
     .high { background: #fef2f2; color: var(--red); border-color: #f3caca; }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      overflow: hidden;
-    }
-    th, td {
-      border-bottom: 1px solid var(--border);
-      padding: 14px 16px;
-      text-align: left;
-      vertical-align: top;
-    }
-    th {
-      background: #f6f9fe;
-      color: #334155;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: .04em;
-    }
-    .table-wrap {
-      overflow: auto;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      background: var(--surface);
-    }
+    table { width: 100%; border-collapse: collapse; overflow: hidden; }
+    th, td { border-bottom: 1px solid var(--border); padding: 14px 16px; text-align: left; vertical-align: top; }
+    th { background: #f6f9fe; color: #334155; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; }
+    .table-wrap { overflow: auto; border: 1px solid var(--border); border-radius: 16px; background: var(--surface); }
     ul { margin-top: 8px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
   <div class="shell">
     <section class="hero">
       <div class="eyebrow">Implementation Planning</div>
-      <h1>VOID — Experiment Code Change Report</h1>
+      <h1><a href="https://arxiv.org/abs/2604.02296">VOID — Experiment Code Change Report</a></h1>
       <p>
         A practical implementation guide mapping proposed follow-up experiments to the most relevant code paths,
         likely edit regions, and expected engineering effort. This is designed to help prioritize ablations,
         reproducibility studies, and paper-extension experiments efficiently.
       </p>
       <div class="meta">
-        <div class="meta-card"><span class="label">Paper</span>VOID: Video Object and Interaction Deletion</div>
-        <div class="meta-card"><span class="label">Repository Scope</span><code>./papers/VOID_Video_Object_and_Interaction_Deletion/code</code></div>
+        <div class="meta-card"><span class="label">Paper</span><a href="https://arxiv.org/abs/2604.02296">VOID: Video Object and Interaction Deletion</a></div>
+        <div class="meta-card"><span class="label">Repository Scope</span><a href="https://github.com/Netflix/void-model"><code>Netflix/void-model</code></a></div>
         <div class="meta-card"><span class="label">Primary Goal</span>Translate research questions into concrete implementation hooks</div>
       </div>
     </section>
@@ -165,9 +81,9 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td>1</td><td>Fix denoising-step discrepancy</td><td><code>inference/cogvideox_fun/predict_v2v.py</code></td><td><code>172–179</code></td><td>Eliminates a likely hidden mismatch between config and actual pass-1 inference.</td></tr>
-            <tr><td>2</td><td>Add frame-0 heuristic toggle</td><td><code>VLM-MASK-REASONER/stage4_combine_masks.py</code></td><td><code>101–115</code></td><td>Makes an undocumented heuristic auditable and easy to ablate.</td></tr>
-            <tr><td>3</td><td>Add prompt override support</td><td><code>videox_fun/utils/utils.py</code> + inference scripts</td><td><code>335–337</code> + arg parsing sites</td><td>Enables prompt sensitivity experiments with minimal code disruption.</td></tr>
+            <tr><td>1</td><td>Fix denoising-step discrepancy</td><td><a href="https://github.com/Netflix/void-model/blob/main/inference/cogvideox_fun/predict_v2v.py"><code>inference/cogvideox_fun/predict_v2v.py</code></a></td><td><code>172–179</code></td><td>Eliminates a likely hidden mismatch between config and actual pass-1 inference.</td></tr>
+            <tr><td>2</td><td>Add frame-0 heuristic toggle</td><td><a href="https://github.com/Netflix/void-model/blob/main/VLM-MASK-REASONER/stage4_combine_masks.py"><code>VLM-MASK-REASONER/stage4_combine_masks.py</code></a></td><td><code>101–115</code></td><td>Makes an undocumented heuristic auditable and easy to ablate.</td></tr>
+            <tr><td>3</td><td>Add prompt override support</td><td><a href="https://github.com/Netflix/void-model/blob/main/videox_fun/utils/utils.py"><code>videox_fun/utils/utils.py</code></a> + inference scripts</td><td><code>335–337</code> + arg parsing sites</td><td>Enables prompt sensitivity experiments with minimal code disruption.</td></tr>
             <tr><td>4</td><td>Create mask ablation generator</td><td>New script under <code>scripts/</code></td><td>New file</td><td>Fastest route to isolating affected-region conditioning gains.</td></tr>
             <tr><td>5</td><td>Create pass-1 vs pass-2 benchmark wrapper</td><td>New script under <code>scripts/</code></td><td>New file</td><td>Separates warped-noise refinement gains from base inference quality.</td></tr>
           </tbody>
@@ -178,35 +94,35 @@
     <section class="card">
       <h2>Per-Experiment Code Change Plan</h2>
 
-      <div class="exp"><h3>1. Ablate the affected-region mask</h3><p><strong>Files and likely line ranges:</strong></p><ul><li><code>VLM-MASK-REASONER/stage4_combine_masks.py</code> — <code>20–53</code>, <code>101–115</code></li><li><code>videox_fun/utils/utils.py</code> — <code>374–413</code></li><li><code>config/quadmask_cogvideox.py</code> — <code>31–49</code></li><li>new helper script under <code>scripts/</code> or <code>inference/</code></li></ul><p><strong>What to change:</strong> add mask-generation modes such as <code>primary_only</code>, <code>quadmask</code>, and <code>corrupted_quadmask</code>; optionally suppress <code>127</code> affected-only regions; add corruption transforms such as dilation, erosion, temporal dropout, and jitter.</p><p><strong>Minimal path:</strong> offline post-processing of <code>quadmask_0.mp4</code> into variant masks before inference.</p><div class="effort med">Effort: Low–Medium</div></div>
+      <div class="exp"><h3>1. Ablate the affected-region mask</h3><p><strong>Files and likely line ranges:</strong></p><ul><li><a href="https://github.com/Netflix/void-model/blob/main/VLM-MASK-REASONER/stage4_combine_masks.py"><code>VLM-MASK-REASONER/stage4_combine_masks.py</code></a> — <code>20–53</code>, <code>101–115</code></li><li><a href="https://github.com/Netflix/void-model/blob/main/videox_fun/utils/utils.py"><code>videox_fun/utils/utils.py</code></a> — <code>374–413</code></li><li><a href="https://github.com/Netflix/void-model/blob/main/config/quadmask_cogvideox.py"><code>config/quadmask_cogvideox.py</code></a> — <code>31–49</code></li><li>new helper script under <code>scripts/</code> or <code>inference/</code></li></ul><p><strong>What to change:</strong> add mask-generation modes such as <code>primary_only</code>, <code>quadmask</code>, and <code>corrupted_quadmask</code>; optionally suppress <code>127</code> affected-only regions; add corruption transforms such as dilation, erosion, temporal dropout, and jitter.</p><p><strong>Minimal path:</strong> offline post-processing of <code>quadmask_0.mp4</code> into variant masks before inference.</p><div class="effort med">Effort: Low–Medium</div></div>
 
-      <div class="exp"><h3>2. Remove the VLM reasoning stage</h3><p><strong>Files and likely line ranges:</strong></p><ul><li><code>VLM-MASK-REASONER/stage2_vlm_analysis.py</code> — <code>256–376</code>, <code>665–740</code></li><li><code>VLM-MASK-REASONER/stage3a_generate_grey_masks_v2.py</code> — around <code>338–383</code></li><li><code>VLM-MASK-REASONER/run_pipeline.sh</code> — around <code>44–66</code></li></ul><p><strong>What to change:</strong> add alternative stage-2 backends such as <code>none</code>, <code>bbox_expand</code>, or <code>motion_heuristic</code>, and emit synthetic <code>vlm_analysis.json</code> outputs for non-VLM modes.</p><p><strong>Minimal path:</strong> bypass stage-2 and emit empty <code>affected_objects</code>.</p><div class="effort med">Effort: Medium</div></div>
+      <div class="exp"><h3>2. Remove the VLM reasoning stage</h3><p><strong>Files and likely line ranges:</strong></p><ul><li><a href="https://github.com/Netflix/void-model/blob/main/VLM-MASK-REASONER/stage2_vlm_analysis.py"><code>VLM-MASK-REASONER/stage2_vlm_analysis.py</code></a> — <code>256–376</code>, <code>665–740</code></li><li><a href="https://github.com/Netflix/void-model/blob/main/VLM-MASK-REASONER/stage3a_generate_grey_masks_v2.py"><code>VLM-MASK-REASONER/stage3a_generate_grey_masks_v2.py</code></a> — around <code>338–383</code></li><li><a href="https://github.com/Netflix/void-model/blob/main/VLM-MASK-REASONER/run_pipeline.sh"><code>VLM-MASK-REASONER/run_pipeline.sh</code></a> — around <code>44–66</code></li></ul><p><strong>What to change:</strong> add alternative stage-2 backends such as <code>none</code>, <code>bbox_expand</code>, or <code>motion_heuristic</code>, and emit synthetic <code>vlm_analysis.json</code> outputs for non-VLM modes.</p><p><strong>Minimal path:</strong> bypass stage-2 and emit empty <code>affected_objects</code>.</p><div class="effort med">Effort: Medium</div></div>
 
-      <div class="exp"><h3>3. Pass-1 vs Pass-2 study</h3><p><strong>Files and likely line ranges:</strong></p><ul><li><code>inference/cogvideox_fun/predict_v2v.py</code> — <code>131–184</code></li><li><code>inference/cogvideox_fun/inference_with_pass1_warped_noise.py</code> — <code>1–16</code>, <code>42–136</code>, <code>219–239</code></li><li><code>inference/pass_2_refine.sh</code> — around <code>25–67</code></li></ul><p><strong>What to change:</strong> mainly orchestration; create a wrapper to run pass 1, optionally run pass 2, and standardize output naming and directories.</p><p><strong>Minimal path:</strong> add <code>scripts/run_ablation_pass1_vs_pass2.sh</code>.</p><div class="effort low">Effort: Low</div></div>
+      <div class="exp"><h3>3. Pass-1 vs Pass-2 study</h3><p><strong>Files and likely line ranges:</strong></p><ul><li><a href="https://github.com/Netflix/void-model/blob/main/inference/cogvideox_fun/predict_v2v.py"><code>inference/cogvideox_fun/predict_v2v.py</code></a> — <code>131–184</code></li><li><a href="https://github.com/Netflix/void-model/blob/main/inference/cogvideox_fun/inference_with_pass1_warped_noise.py"><code>inference/cogvideox_fun/inference_with_pass1_warped_noise.py</code></a> — <code>1–16</code>, <code>42–136</code>, <code>219–239</code></li><li><a href="https://github.com/Netflix/void-model/blob/main/inference/pass_2_refine.sh"><code>inference/pass_2_refine.sh</code></a> — around <code>25–67</code></li></ul><p><strong>What to change:</strong> mainly orchestration; create a wrapper to run pass 1, optionally run pass 2, and standardize output naming and directories.</p><p><strong>Minimal path:</strong> add <code>scripts/run_ablation_pass1_vs_pass2.sh</code>.</p><div class="effort low">Effort: Low</div></div>
 
-      <div class="exp"><h3>4. Denoising-step discrepancy study</h3><p><strong>Files and likely line ranges:</strong></p><ul><li><code>inference/cogvideox_fun/predict_v2v.py</code> — <code>172–179</code></li><li><code>config/quadmask_cogvideox.py</code> — <code>40–47</code></li></ul><p><strong>What to change:</strong> replace hardcoded <code>30</code> with <code>config.video_model.num_inference_steps</code>.</p><p><strong>Minimal path:</strong> single-line fix plus a sweep script.</p><div class="effort low">Effort: Low</div></div>
+      <div class="exp"><h3>4. Denoising-step discrepancy study</h3><p><strong>Files and likely line ranges:</strong></p><ul><li><a href="https://github.com/Netflix/void-model/blob/main/inference/cogvideox_fun/predict_v2v.py"><code>inference/cogvideox_fun/predict_v2v.py</code></a> — <code>172–179</code></li><li><a href="https://github.com/Netflix/void-model/blob/main/config/quadmask_cogvideox.py"><code>config/quadmask_cogvideox.py</code></a> — <code>40–47</code></li></ul><p><strong>What to change:</strong> replace hardcoded <code>30</code> with <code>config.video_model.num_inference_steps</code>.</p><p><strong>Minimal path:</strong> single-line fix plus a sweep script.</p><div class="effort low">Effort: Low</div></div>
 
-      <div class="exp"><h3>5. Prompt sensitivity study</h3><p><strong>Files and likely line ranges:</strong></p><ul><li><code>videox_fun/utils/utils.py</code> — <code>335–337</code></li><li>input data folders containing <code>prompt.json</code></li><li>optional experiment runner script</li></ul><p><strong>What to change:</strong> either vary <code>prompt.json</code> directly or add prompt override CLI support near inference argument parsing and the <code>get_video_mask_input(...)</code> call sites.</p><p><strong>Minimal path:</strong> duplicate inputs with prompt variants.</p><div class="effort low">Effort: Low</div></div>
+      <div class="exp"><h3>5. Prompt sensitivity study</h3><p><strong>Files and likely line ranges:</strong></p><ul><li><a href="https://github.com/Netflix/void-model/blob/main/videox_fun/utils/utils.py"><code>videox_fun/utils/utils.py</code></a> — <code>335–337</code></li><li>input data folders containing <code>prompt.json</code></li><li>optional experiment runner script</li></ul><p><strong>What to change:</strong> either vary <code>prompt.json</code> directly or add prompt override CLI support near inference argument parsing and the <code>get_video_mask_input(...)</code> call sites.</p><p><strong>Minimal path:</strong> duplicate inputs with prompt variants.</p><div class="effort low">Effort: Low</div></div>
 
-      <div class="exp"><h3>6. Mask corruption robustness</h3><p><strong>Files and likely line ranges:</strong></p><ul><li><code>VLM-MASK-REASONER/stage4_combine_masks.py</code> — <code>20–53</code>, <code>101–115</code></li><li><code>videox_fun/utils/utils.py</code> — <code>374–413</code></li><li>new utility script under <code>scripts/</code></li></ul><p><strong>What to change:</strong> add perturbation functions for under-mask, over-mask, temporal jitter, and frame-0 corruption, then export perturbed quadmask variants.</p><p><strong>Minimal path:</strong> separate offline mask-corruption tool.</p><div class="effort med">Effort: Medium</div></div>
+      <div class="exp"><h3>6. Mask corruption robustness</h3><p><strong>Files and likely line ranges:</strong></p><ul><li><a href="https://github.com/Netflix/void-model/blob/main/VLM-MASK-REASONER/stage4_combine_masks.py"><code>VLM-MASK-REASONER/stage4_combine_masks.py</code></a> — <code>20–53</code>, <code>101–115</code></li><li><a href="https://github.com/Netflix/void-model/blob/main/videox_fun/utils/utils.py"><code>videox_fun/utils/utils.py</code></a> — <code>374–413</code></li><li>new utility script under <code>scripts/</code></li></ul><p><strong>What to change:</strong> add perturbation functions for under-mask, over-mask, temporal jitter, and frame-0 corruption, then export perturbed quadmask variants.</p><p><strong>Minimal path:</strong> separate offline mask-corruption tool.</p><div class="effort med">Effort: Medium</div></div>
 
       <div class="exp"><h3>7. Physical interaction category breakdown</h3><p><strong>Files and likely line ranges:</strong></p><ul><li>new metadata file such as <code>experiments/interaction_labels.json</code></li><li>evaluation scripts under <code>scripts/</code></li></ul><p><strong>What to change:</strong> add per-video category labels and aggregate evaluation by interaction type.</p><p><strong>Minimal path:</strong> evaluation-layer only.</p><div class="effort med">Effort: Low–Medium</div></div>
 
-      <div class="exp"><h3>8. Cross-domain generalization</h3><p><strong>Files and likely line ranges:</strong></p><ul><li>mostly none in core model</li><li>optional input conversion script</li><li>possibly <code>videox_fun/utils/utils.py</code> — <code>338–343</code>, <code>409–413</code> if format handling needs extension</li></ul><p><strong>What to change:</strong> standardize new inputs into the expected folder format with <code>input_video.mp4</code>, <code>quadmask_0.mp4</code>, and <code>prompt.json</code>.</p><p><strong>Minimal path:</strong> data-format conversion only.</p><div class="effort low">Effort: Low</div></div>
+      <div class="exp"><h3>8. Cross-domain generalization</h3><p><strong>Files and likely line ranges:</strong></p><ul><li>mostly none in core model</li><li>optional input conversion script</li><li>possibly <a href="https://github.com/Netflix/void-model/blob/main/videox_fun/utils/utils.py"><code>videox_fun/utils/utils.py</code></a> — <code>338–343</code>, <code>409–413</code> if format handling needs extension</li></ul><p><strong>What to change:</strong> standardize new inputs into the expected folder format with <code>input_video.mp4</code>, <code>quadmask_0.mp4</code>, and <code>prompt.json</code>.</p><p><strong>Minimal path:</strong> data-format conversion only.</p><div class="effort low">Effort: Low</div></div>
 
       <div class="exp"><h3>9. Compare against simpler baselines</h3><p><strong>Files and likely line ranges:</strong></p><ul><li>external baseline repos/scripts</li><li>optional shared evaluation script in this repo</li><li>minimal or no edits to VOID core files</li></ul><p><strong>What to change:</strong> add a common result export format and a comparison metrics script.</p><p><strong>Minimal path:</strong> add <code>scripts/compare_baselines.py</code>.</p><div class="effort med">Effort: Medium</div></div>
 
-      <div class="exp"><h3>10. Evaluate the first-frame mask heuristic</h3><p><strong>Files and likely line ranges:</strong></p><ul><li><code>VLM-MASK-REASONER/stage4_combine_masks.py</code> — <code>101–115</code></li></ul><p><strong>What to change:</strong> add a flag such as <code>--clear-first-frame-grey</code> and wrap the heuristic in a conditional.</p><p><strong>Minimal path:</strong> one-file edit.</p><div class="effort low">Effort: Very Low</div></div>
+      <div class="exp"><h3>10. Evaluate the first-frame mask heuristic</h3><p><strong>Files and likely line ranges:</strong></p><ul><li><a href="https://github.com/Netflix/void-model/blob/main/VLM-MASK-REASONER/stage4_combine_masks.py"><code>VLM-MASK-REASONER/stage4_combine_masks.py</code></a> — <code>101–115</code></li></ul><p><strong>What to change:</strong> add a flag such as <code>--clear-first-frame-grey</code> and wrap the heuristic in a conditional.</p><p><strong>Minimal path:</strong> one-file edit.</p><div class="effort low">Effort: Very Low</div></div>
 
       <div class="exp"><h3>11. Human evaluation on physical plausibility</h3><p><strong>Files and likely line ranges:</strong></p><ul><li>no core model changes</li><li>new export script and survey generation assets</li></ul><p><strong>What to change:</strong> create side-by-side packaging scripts plus CSV/HTML annotation sheets.</p><p><strong>Minimal path:</strong> evaluation tooling only.</p><div class="effort med">Effort: Low–Medium</div></div>
 
-      <div class="exp"><h3>12. Training ablation on quadmask representation</h3><p><strong>Files and likely line ranges:</strong></p><ul><li><code>scripts/cogvideox_fun/train.py</code> — <code>1234–1243</code></li><li><code>scripts/cogvideox_fun/train_warped_noise.py</code> — <code>1257–1265</code></li><li><code>videox_fun/utils/utils.py</code> — <code>374–413</code></li><li><code>VLM-MASK-REASONER/stage4_combine_masks.py</code> — <code>20–53</code></li><li><code>config/default_cogvideox.py</code> — mask-related config block</li><li><code>config/quadmask_cogvideox.py</code> — <code>33–49</code></li></ul><p><strong>What to change:</strong> generalize mask modes into a shared config enum and ensure train/inference preprocessing remain aligned.</p><p><strong>Minimal path:</strong> preprocessing remap before deeper architecture changes.</p><div class="effort high">Effort: Medium–High</div></div>
+      <div class="exp"><h3>12. Training ablation on quadmask representation</h3><p><strong>Files and likely line ranges:</strong></p><ul><li><a href="https://github.com/Netflix/void-model/blob/main/scripts/cogvideox_fun/train.py"><code>scripts/cogvideox_fun/train.py</code></a> — <code>1234–1243</code></li><li><a href="https://github.com/Netflix/void-model/blob/main/scripts/cogvideox_fun/train_warped_noise.py"><code>scripts/cogvideox_fun/train_warped_noise.py</code></a> — <code>1257–1265</code></li><li><a href="https://github.com/Netflix/void-model/blob/main/videox_fun/utils/utils.py"><code>videox_fun/utils/utils.py</code></a> — <code>374–413</code></li><li><a href="https://github.com/Netflix/void-model/blob/main/VLM-MASK-REASONER/stage4_combine_masks.py"><code>VLM-MASK-REASONER/stage4_combine_masks.py</code></a> — <code>20–53</code></li><li><a href="https://github.com/Netflix/void-model/blob/main/config/default_cogvideox.py"><code>config/default_cogvideox.py</code></a> — mask-related config block</li><li><a href="https://github.com/Netflix/void-model/blob/main/config/quadmask_cogvideox.py"><code>config/quadmask_cogvideox.py</code></a> — <code>33–49</code></li></ul><p><strong>What to change:</strong> generalize mask modes into a shared config enum and ensure train/inference preprocessing remain aligned.</p><p><strong>Minimal path:</strong> preprocessing remap before deeper architecture changes.</p><div class="effort high">Effort: Medium–High</div></div>
 
-      <div class="exp"><h3>13. Warped-noise training ablation</h3><p><strong>Files and likely line ranges:</strong></p><ul><li><code>scripts/cogvideox_fun/train_warped_noise.py</code> — <code>1257–1287</code>, <code>1319–1323</code>, <code>1790–1865</code></li><li><code>inference/cogvideox_fun/inference_with_pass1_warped_noise.py</code> — <code>75–196</code>, <code>219–239</code></li><li><code>inference/cogvideox_fun/make_warped_noise.py</code> — likely core generation logic near file head</li></ul><p><strong>What to change:</strong> mostly already supported; add clean presets and reproducible logging.</p><p><strong>Minimal path:</strong> orchestration and instrumentation, not architecture changes.</p><div class="effort med">Effort: Low–Medium</div></div>
+      <div class="exp"><h3>13. Warped-noise training ablation</h3><p><strong>Files and likely line ranges:</strong></p><ul><li><a href="https://github.com/Netflix/void-model/blob/main/scripts/cogvideox_fun/train_warped_noise.py"><code>scripts/cogvideox_fun/train_warped_noise.py</code></a> — <code>1257–1287</code>, <code>1319–1323</code>, <code>1790–1865</code></li><li><a href="https://github.com/Netflix/void-model/blob/main/inference/cogvideox_fun/inference_with_pass1_warped_noise.py"><code>inference/cogvideox_fun/inference_with_pass1_warped_noise.py</code></a> — <code>75–196</code>, <code>219–239</code></li><li><a href="https://github.com/Netflix/void-model/blob/main/inference/cogvideox_fun/make_warped_noise.py"><code>inference/cogvideox_fun/make_warped_noise.py</code></a> — likely core generation logic near file head</li></ul><p><strong>What to change:</strong> mostly already supported; add clean presets and reproducible logging.</p><p><strong>Minimal path:</strong> orchestration and instrumentation, not architecture changes.</p><div class="effort med">Effort: Low–Medium</div></div>
 
       <div class="exp"><h3>14. Failure-case audit</h3><p><strong>Files and likely line ranges:</strong></p><ul><li>likely no core changes</li><li>benchmark manifest and evaluation/reporting assets</li></ul><p><strong>What to change:</strong> build dataset split annotations and structured failure logging.</p><p><strong>Minimal path:</strong> reporting layer only.</p><div class="effort low">Effort: Low</div></div>
 
-      <div class="exp"><h3>15. Cost-efficiency analysis</h3><p><strong>Files and likely line ranges:</strong></p><ul><li><code>inference/cogvideox_fun/predict_v2v.py</code> — <code>131–184</code> plus output-saving region below</li><li><code>inference/cogvideox_fun/inference_with_pass1_warped_noise.py</code> — <code>75–196</code>, <code>219–239</code></li><li>wrapper benchmark script</li></ul><p><strong>What to change:</strong> add timers, GPU-memory logging when available, and structured benchmark JSON output.</p><p><strong>Minimal path:</strong> lightweight instrumentation wrappers.</p><div class="effort low">Effort: Low</div></div>
+      <div class="exp"><h3>15. Cost-efficiency analysis</h3><p><strong>Files and likely line ranges:</strong></p><ul><li><a href="https://github.com/Netflix/void-model/blob/main/inference/cogvideox_fun/predict_v2v.py"><code>inference/cogvideox_fun/predict_v2v.py</code></a> — <code>131–184</code> plus output-saving region below</li><li><a href="https://github.com/Netflix/void-model/blob/main/inference/cogvideox_fun/inference_with_pass1_warped_noise.py"><code>inference/cogvideox_fun/inference_with_pass1_warped_noise.py</code></a> — <code>75–196</code>, <code>219–239</code></li><li>wrapper benchmark script</li></ul><p><strong>What to change:</strong> add timers, GPU-memory logging when available, and structured benchmark JSON output.</p><p><strong>Minimal path:</strong> lightweight instrumentation wrappers.</p><div class="effort low">Effort: Low</div></div>
     </section>
 
     <section class="card">
