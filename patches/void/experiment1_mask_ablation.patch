@@ -1,0 +1,115 @@
+diff --git a/config/quadmask_cogvideox.py b/config/quadmask_cogvideox.py
+index b0aaf0c..f6e2968 100644
+--- a/config/quadmask_cogvideox.py
++++ b/config/quadmask_cogvideox.py
+@@ -52,6 +52,16 @@ def get_video_model_config():
+     config.temproal_multidiffusion_stride = 16
+     config.use_vae_mask = True
+     config.stack_mask = False
++
++    # Mask ablation settings for Shadow-PI experiments.
++    # Options:
++    # - "quadmask": use the original 4-level mask as provided
++    # - "primary_only": keep only the primary object removal region
++    # - "drop_affected": remove all affected/interacting regions from the mask
++    # - "corrupted_affected": perturb affected/interacting regions while preserving primary object
++    config.mask_ablation_mode = "quadmask"
++    config.affected_mask_shift_px = 0
++    config.affected_mask_dropout = 0.0
+     return config
+ 
+ 
+diff --git a/inference/cogvideox_fun/predict_v2v.py b/inference/cogvideox_fun/predict_v2v.py
+index 84e19d1..9b91292 100644
+--- a/inference/cogvideox_fun/predict_v2v.py
++++ b/inference/cogvideox_fun/predict_v2v.py
+@@ -193,6 +193,9 @@ def run_inference(config, pipeline, vae, generator, input_video_name, keep_fg_id
+             use_trimask=config.video_model.use_trimask,
+             use_quadmask=config.video_model.use_quadmask,
+             dilate_width=config.data.dilate_width,
++            mask_ablation_mode=getattr(config.video_model, 'mask_ablation_mode', 'quadmask'),
++            affected_mask_shift_px=getattr(config.video_model, 'affected_mask_shift_px', 0),
++            affected_mask_dropout=getattr(config.video_model, 'affected_mask_dropout', 0.0),
+         )
+     else:
+         input_video, input_video_mask, prompt = get_video_mask_validation(
+diff --git a/videox_fun/utils/utils.py b/videox_fun/utils/utils.py
+index 4a91294..e9a7091 100644
+--- a/videox_fun/utils/utils.py
++++ b/videox_fun/utils/utils.py
+@@ -319,6 +319,52 @@ def temporal_padding(video, min_length=85, max_length=197, dim=2):
+     return video
+ 
+ 
++def _shift_tensor_spatial(mask_tensor, shift_y=0, shift_x=0):
++    if shift_y == 0 and shift_x == 0:
++        return mask_tensor
++    shifted = torch.roll(mask_tensor, shifts=(shift_y, shift_x), dims=(-2, -1))
++    if shift_y > 0:
++        shifted[..., :shift_y, :] = 0
++    elif shift_y < 0:
++        shifted[..., shift_y:, :] = 0
++    if shift_x > 0:
++        shifted[..., :, :shift_x] = 0
++    elif shift_x < 0:
++        shifted[..., :, shift_x:] = 0
++    return shifted
++
++
++def _apply_mask_ablation(input_mask, mode="quadmask", affected_mask_shift_px=0, affected_mask_dropout=0.0):
++    if mode in [None, "quadmask"]:
++        return input_mask
++
++    primary = torch.isclose(input_mask, torch.tensor(1.0, device=input_mask.device, dtype=input_mask.dtype))
++    overlap = torch.isclose(input_mask, torch.tensor((255.0 - 63.0) / 255.0, device=input_mask.device, dtype=input_mask.dtype))
++    affected = torch.isclose(input_mask, torch.tensor((255.0 - 127.0) / 255.0, device=input_mask.device, dtype=input_mask.dtype))
++
++    if mode in ["primary_only", "drop_affected"]:
++        ablated = torch.zeros_like(input_mask)
++        ablated[primary | overlap] = 1.0
++        return ablated
++
++    if mode == "corrupted_affected":
++        affected_mask = (affected | overlap).to(input_mask.dtype)
++        if affected_mask_shift_px != 0:
++            affected_mask = _shift_tensor_spatial(affected_mask, shift_x=int(affected_mask_shift_px))
++        if affected_mask_dropout > 0:
++            keep = (torch.rand_like(affected_mask) > affected_mask_dropout).to(input_mask.dtype)
++            affected_mask = affected_mask * keep
++
++        ablated = torch.zeros_like(input_mask)
++        ablated[primary] = 1.0
++        ablated[affected_mask > 0.5] = (255.0 - 127.0) / 255.0
++        overlap_mask = primary & (affected_mask > 0.5)
++        ablated[overlap_mask] = (255.0 - 63.0) / 255.0
++        return ablated
++
++    raise ValueError(f"Unknown mask_ablation_mode: {mode}")
++
++
+ def get_video_mask_input(
+         input_video_name,
+         sample_size,
+@@ -331,6 +377,9 @@ def get_video_mask_input(
+         use_fixed_bbox=False,
+         dilate_width=11,
+         apply_temporal_padding=True,
++        mask_ablation_mode="quadmask",
++        affected_mask_shift_px=0,
++        affected_mask_dropout=0.0,
+     ): 
+     input_video_path = os.path.join(data_rootdir, input_video_name, "input_video.mp4")
+     mask_paths = sorted(list(glob.glob(os.path.join(data_rootdir, input_video_name, 'mask_*.mp4'))))
+@@ -411,6 +460,12 @@ def get_video_mask_input(
+         input_video = temporal_padding(input_video, min_length=temporal_window_size, max_length=max_video_length)
+         input_mask = temporal_padding(input_mask, min_length=temporal_window_size, max_length=max_video_length)
+     input_mask = input_mask / 255.
++    input_mask = _apply_mask_ablation(
++        input_mask,
++        mode=mask_ablation_mode,
++        affected_mask_shift_px=affected_mask_shift_px,
++        affected_mask_dropout=affected_mask_dropout,
++    )
+     logger.debug('dataloading mask', input_mask.min(), input_mask.max(), input_mask.dtype, input_mask.shape)
+     return input_video, input_mask, prompt, clip_image
+ 
