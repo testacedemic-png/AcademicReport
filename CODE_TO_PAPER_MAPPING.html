@@ -6,313 +6,222 @@
   <title>VOID — Code to Paper Mapping</title>
   <style>
     :root {
-      --bg: #0b1020;
-      --panel: #121933;
-      --panel-2: #182242;
-      --text: #e8ecf8;
-      --muted: #b4bfdc;
-      --accent: #7cc4ff;
-      --accent-2: #9bffb0;
-      --warn: #ffd166;
-      --border: #2b3866;
-      --code: #0f1530;
+      --bg: #f7f8fb;
+      --surface: #ffffff;
+      --surface-soft: #f3f6fb;
+      --text: #1f2937;
+      --muted: #5b6578;
+      --border: #dbe3ef;
+      --accent: #2563eb;
+      --accent-soft: #e8f0ff;
+      --good: #0f766e;
+      --warn: #b45309;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.07);
+      --radius: 18px;
     }
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      padding: 32px;
-      font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
-      background: var(--bg);
+      background: linear-gradient(180deg, #f9fbff 0%, #f4f7fb 100%);
       color: var(--text);
+      font: 15px/1.7 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
-    .wrap {
+    .shell {
       max-width: 1400px;
       margin: 0 auto;
+      padding: 28px;
+    }
+    .hero {
+      background: linear-gradient(135deg, #ffffff 0%, #f5f9ff 100%);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 32px;
+      margin-bottom: 24px;
+    }
+    .eyebrow {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid #cfe0ff;
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
     }
     h1, h2, h3 { line-height: 1.2; margin: 0 0 12px; }
-    h1 { font-size: 32px; }
-    h2 { font-size: 22px; margin-top: 32px; }
+    h1 { font-size: 34px; letter-spacing: -0.02em; }
+    h2 { font-size: 24px; margin-top: 6px; }
     p, li { color: var(--muted); }
-    .card {
-      background: linear-gradient(180deg, var(--panel), var(--panel-2));
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 20px;
-      margin: 18px 0;
-      box-shadow: 0 10px 30px rgba(0,0,0,.18);
-    }
     .meta {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 12px;
+      gap: 14px;
+      margin-top: 22px;
     }
-    .pill {
-      display: inline-block;
-      padding: 3px 10px;
-      border-radius: 999px;
-      background: #20305f;
+    .meta-card, .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .meta-card {
+      padding: 16px 18px;
+    }
+    .label {
+      display: block;
       color: var(--accent);
-      border: 1px solid #33508f;
       font-size: 12px;
-      margin-right: 8px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      margin-bottom: 6px;
+    }
+    .card {
+      padding: 24px;
+      margin: 20px 0;
+    }
+    .summary-list li { margin: 8px 0; }
+    .good { color: var(--good); font-weight: 600; }
+    .warn { color: var(--warn); font-weight: 600; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .table-wrap {
+      overflow: auto;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--surface);
     }
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 14px;
-      background: rgba(255,255,255,0.02);
-      border-radius: 12px;
-      overflow: hidden;
+      min-width: 980px;
     }
     th, td {
-      border: 1px solid var(--border);
-      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      padding: 14px 16px;
       vertical-align: top;
       text-align: left;
     }
     th {
-      background: #162048;
-      color: #f5f7ff;
       position: sticky;
       top: 0;
+      background: #f6f9fe;
+      color: #334155;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      z-index: 1;
     }
-    td code, pre code {
-      background: var(--code);
-      color: #d7e3ff;
+    tr:nth-child(even) td { background: #fcfdff; }
+    code {
+      background: #eef3fb;
+      border: 1px solid #dde7f6;
+      border-radius: 8px;
       padding: 2px 6px;
-      border-radius: 6px;
+      color: #1e3a8a;
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 13px;
       word-break: break-word;
     }
-    pre {
-      background: var(--code);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 14px;
-      overflow: auto;
-      color: #d7e3ff;
+    .footer-note {
+      font-size: 13px;
+      color: #6b7280;
     }
-    .good { color: var(--accent-2); }
-    .warn { color: var(--warn); }
-    .small { font-size: 13px; }
-    a { color: var(--accent); }
-    ul { margin-top: 8px; }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="card">
+  <div class="shell">
+    <section class="hero">
+      <div class="eyebrow">Shadow-PI Report</div>
       <h1>VOID: Code-to-Paper Mapping</h1>
-      <p class="small">
-        Paper: <strong>VOID: Video Object and Interaction Deletion</strong><br/>
-        arXiv: <a href="https://arxiv.org/abs/2604.02296">2604.02296</a><br/>
-        Repo: <a href="https://github.com/Netflix/void-model">Netflix/void-model</a>
+      <p>
+        A structured mapping between the paper <strong>“VOID: Video Object and Interaction Deletion”</strong>
+        and its implementation in the public repository. This page highlights the core logic path,
+        exact source references, and the most important reproducibility-sensitive engineering details.
       </p>
       <div class="meta">
-        <div><span class="pill">Audit type</span><br/>Shadow-PI code ↔ paper mapping</div>
-        <div><span class="pill">Focus</span><br/>Interaction-aware masking, inpainting, refinement</div>
-        <div><span class="pill">Generated</span><br/>2026-04-05 (Asia/Singapore)</div>
+        <div class="meta-card"><span class="label">Paper</span>VOID: Video Object and Interaction Deletion</div>
+        <div class="meta-card"><span class="label">arXiv</span><a href="https://arxiv.org/abs/2604.02296">2604.02296</a></div>
+        <div class="meta-card"><span class="label">Repository</span><a href="https://github.com/Netflix/void-model">Netflix/void-model</a></div>
+        <div class="meta-card"><span class="label">Focus</span>Interaction-aware masking, inpainting, refinement</div>
       </div>
-    </div>
+    </section>
 
-    <div class="card">
+    <section class="card">
       <h2>Executive Summary</h2>
       <p>
-        The repository operationalizes the paper’s main claim through a multi-stage pipeline:
-        <strong>SAM2-based primary segmentation</strong>, <strong>Gemini/VLM reasoning over affected regions</strong>,
-        <strong>quadmask construction</strong>, <strong>quadmask-conditioned CogVideoX inpainting</strong>, and an optional
-        <strong>warped-noise second pass</strong> for temporal consistency.
+        The repository implements the paper’s core idea through a staged pipeline: <strong>SAM2 segmentation</strong>,
+        <strong>VLM reasoning over affected objects</strong>, <strong>quadmask construction</strong>,
+        <strong>quadmask-conditioned CogVideoX inpainting</strong>, and an optional <strong>warped-noise refinement pass</strong>.
       </p>
-      <ul>
-        <li><span class="good">Direct match to paper idea:</span> affected-object reasoning is explicitly represented in the mask pipeline.</li>
-        <li><span class="warn">Important engineering heuristic:</span> frame-0 grey affected regions are forcibly cleared in the quadmask combiner.</li>
-        <li><span class="warn">Likely reproducibility discrepancy:</span> config exposes <code>num_inference_steps = 50</code>, but pass-1 inference hardcodes <code>30</code>.</li>
+      <ul class="summary-list">
+        <li><span class="good">Direct paper match:</span> affected-object reasoning is explicitly encoded in the mask-generation pipeline.</li>
+        <li><span class="warn">Important heuristic:</span> the first frame forcibly clears grey-valued affected regions before final quadmask export.</li>
+        <li><span class="warn">Reproducibility concern:</span> config advertises <code>num_inference_steps = 50</code>, while pass-1 inference uses <code>30</code> directly in code.</li>
       </ul>
-    </div>
+    </section>
 
-    <div class="card">
+    <section class="card">
       <h2>Precise Logic Map</h2>
-      <table>
-        <thead>
-          <tr>
-            <th style="width:20%">Paper logic component</th>
-            <th style="width:45%">What the code does</th>
-            <th style="width:35%">File / line reference</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Affected-region reasoning prompt</td>
-            <td>Builds the VLM prompt that asks what happens when the primary object is removed, separating integral belongings from affected objects.</td>
-            <td><code>VLM-MASK-REASONER/stage2_vlm_analysis.py#L256-L337</code></td>
-          </tr>
-          <tr>
-            <td>Physical-vs-visual affected object taxonomy</td>
-            <td>Explicitly distinguishes visual artifacts from physical objects, and encodes movement logic based on support vs interaction.</td>
-            <td><code>VLM-MASK-REASONER/stage2_vlm_analysis.py#L318-L376</code></td>
-          </tr>
-          <tr>
-            <td>Quadmask semantics</td>
-            <td>Declares final mask values: <code>0</code> primary, <code>63</code> overlap, <code>127</code> affected, <code>255</code> background.</td>
-            <td><code>VLM-MASK-REASONER/stage4_combine_masks.py#L1-L12</code></td>
-          </tr>
-          <tr>
-            <td>Quadmask merge rule</td>
-            <td>Implements exact merge logic from black/grey masks: <code>(0,255)-&gt;0</code>, <code>(255,127)-&gt;127</code>, <code>(0,127)-&gt;63</code>, <code>(255,255)-&gt;255</code>.</td>
-            <td><code>VLM-MASK-REASONER/stage4_combine_masks.py#L20-L49</code></td>
-          </tr>
-          <tr>
-            <td>First-frame heuristic</td>
-            <td>Clears near-grey pixels on frame 0 to background, preventing grey affected regions from surviving on the first frame.</td>
-            <td><code>VLM-MASK-REASONER/stage4_combine_masks.py#L101-L115</code></td>
-          </tr>
-          <tr>
-            <td>Prompt source used at inference</td>
-            <td>Loads only <code>prompt.json["bg"]</code> as the text prompt for the model.</td>
-            <td><code>videox_fun/utils/utils.py#L335-L337</code></td>
-          </tr>
-          <tr>
-            <td>Input video loading</td>
-            <td>Reads <code>input_video.mp4</code>, truncates to <code>max_video_length</code>, converts to tensor, and resizes to configured sample size.</td>
-            <td><code>videox_fun/utils/utils.py#L338-L343</code></td>
-          </tr>
-          <tr>
-            <td>Quadmask ingestion and requantization</td>
-            <td>Reads <code>quadmask_*.mp4</code>, then requantizes interpolated values back to discrete levels <code>0/63/127/255</code>.</td>
-            <td><code>videox_fun/utils/utils.py#L374-L393</code></td>
-          </tr>
-          <tr>
-            <td>Mask polarity inversion</td>
-            <td>After requantization, flips mask via <code>255 - input_mask</code> before normalization.</td>
-            <td><code>videox_fun/utils/utils.py#L387-L393</code></td>
-          </tr>
-          <tr>
-            <td>Temporal padding</td>
-            <td>Pads both video and mask to satisfy temporal window constraints before inference.</td>
-            <td><code>videox_fun/utils/utils.py#L409-L413</code></td>
-          </tr>
-          <tr>
-            <td>Inference config: quadmask mode</td>
-            <td>Enables quadmask inference and VAE-mask conditioning by default.</td>
-            <td><code>config/quadmask_cogvideox.py#L33-L49</code></td>
-          </tr>
-          <tr>
-            <td>Inference config: generation hyperparameters</td>
-            <td>Sets <code>guidance_scale=1.0</code>, <code>num_inference_steps=50</code>, <code>temporal_window_size=85</code> in config.</td>
-            <td><code>config/quadmask_cogvideox.py#L40-L47</code></td>
-          </tr>
-          <tr>
-            <td>Inference config: system/GPU assumptions</td>
-            <td>Defaults device to <code>cuda</code> and uses CPU-offload/float8 memory mode.</td>
-            <td><code>config/quadmask_cogvideox.py#L52-L76</code></td>
-          </tr>
-          <tr>
-            <td>Custom transformer loading</td>
-            <td>Loads CogVideoX transformer with <code>use_vae_mask</code> / <code>stack_mask</code> options.</td>
-            <td><code>inference/cogvideox_fun/predict_v2v.py#L40-L50</code></td>
-          </tr>
-          <tr>
-            <td>Patch embedding adaptation</td>
-            <td>If checkpoint channel count mismatches due to mask conditioning, adapts <code>patch_embed.proj.weight</code> instead of loading naively.</td>
-            <td><code>inference/cogvideox_fun/predict_v2v.py#L62-L85</code></td>
-          </tr>
-          <tr>
-            <td>Video+mask assembly for inference</td>
-            <td>Calls <code>get_video_mask_input(...)</code> with <code>use_quadmask=config.video_model.use_quadmask</code>.</td>
-            <td><code>inference/cogvideox_fun/predict_v2v.py#L139-L157</code></td>
-          </tr>
-          <tr>
-            <td>Actual forward pass inputs</td>
-            <td>Pipeline receives prompt, video, mask video, guidance scale, denoise strength, and VAE-mask flags.</td>
-            <td><code>inference/cogvideox_fun/predict_v2v.py#L172-L184</code></td>
-          </tr>
-          <tr>
-            <td>Step-count discrepancy</td>
-            <td>Actual inference hardcodes <code>num_inference_steps = 30</code>, despite config specifying 50.</td>
-            <td><code>inference/cogvideox_fun/predict_v2v.py#L177-L179</code> and <code>config/quadmask_cogvideox.py#L43-L45</code></td>
-          </tr>
-          <tr>
-            <td>Inpaint mask preprocessing</td>
-            <td>In the inpaint pipeline, preprocesses <code>mask_video</code> and discretizes it depending on trimask vs binary mode.</td>
-            <td><code>videox_fun/pipeline/pipeline_cogvideox_fun_inpaint.py#L970-L989</code></td>
-          </tr>
-          <tr>
-            <td>VAE-mask conditioning path</td>
-            <td>When transformer channels exceed latent channels, encodes mask/video into latent conditioning and concatenates them as <code>inpaint_latents</code>.</td>
-            <td><code>videox_fun/pipeline/pipeline_cogvideox_fun_inpaint.py#L991-L1063</code></td>
-          </tr>
-          <tr>
-            <td>CFG / Imagen-style guidance</td>
-            <td>Uses classifier-free guidance and explicitly documents guidance as Imagen Eq. 2 style.</td>
-            <td><code>videox_fun/pipeline/pipeline_cogvideox_fun_inpaint.py#L806-L809</code>, <code>#L888-L892</code>, <code>#L1148-L1155</code></td>
-          </tr>
-          <tr>
-            <td>Temporal multidiffusion behavior</td>
-            <td>Switches to temporal multidiffusion when latent sequence exceeds temporal window.</td>
-            <td><code>videox_fun/pipeline/pipeline_cogvideox_fun_inpaint.py#L1092-L1100</code></td>
-          </tr>
-          <tr>
-            <td>Pass-2 refinement concept</td>
-            <td>Defines second-pass inference using warped noise derived from pass-1 outputs.</td>
-            <td><code>inference/cogvideox_fun/inference_with_pass1_warped_noise.py#L1-L16</code></td>
-          </tr>
-          <tr>
-            <td>Pass-1 output discovery</td>
-            <td>Finds pass-1 output video matching <code>{video_name}-fg=-1-*.mp4</code>.</td>
-            <td><code>inference/cogvideox_fun/inference_with_pass1_warped_noise.py#L42-L72</code></td>
-          </tr>
-          <tr>
-            <td>Warped-noise generation</td>
-            <td>Calls <code>make_warped_noise.py</code> on pass-1 video and caches <code>noises.npy</code>.</td>
-            <td><code>inference/cogvideox_fun/inference_with_pass1_warped_noise.py#L75-L136</code></td>
-          </tr>
-          <tr>
-            <td>Warped-noise resize into latent space</td>
-            <td>Loads cached noise, optionally converts layout, resizes temporally/spatially, and converts to torch tensor.</td>
-            <td><code>inference/cogvideox_fun/inference_with_pass1_warped_noise.py#L139-L196</code></td>
-          </tr>
-          <tr>
-            <td>Pass-2 default hyperparameters</td>
-            <td>Pass 2 defaults to <code>guidance_scale=6.0</code>, <code>num_inference_steps=50</code>, <code>temporal_window_size=85</code>.</td>
-            <td><code>inference/cogvideox_fun/inference_with_pass1_warped_noise.py#L219-L239</code></td>
-          </tr>
-          <tr>
-            <td>Training-side quadmask requantization</td>
-            <td>Training dataloader re-quantizes interpolated masks back to the four discrete quadmask levels.</td>
-            <td><code>scripts/cogvideox_fun/train.py#L1234-L1243</code></td>
-          </tr>
-          <tr>
-            <td>Warped-noise training support</td>
-            <td>Training pipeline optionally carries warped noise through the batch collation path.</td>
-            <td><code>scripts/cogvideox_fun/train_warped_noise.py#L1257-L1287</code>, <code>#L1319-L1323</code></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:22%">Paper logic component</th>
+              <th style="width:45%">What the code does</th>
+              <th style="width:33%">File / line reference</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Affected-region reasoning prompt</td><td>Builds the VLM prompt that asks what happens when the primary object is removed, separating integral belongings from affected objects.</td><td><code>VLM-MASK-REASONER/stage2_vlm_analysis.py#L256-L337</code></td></tr>
+            <tr><td>Physical-vs-visual affected object taxonomy</td><td>Distinguishes visual artifacts from physical objects and encodes movement logic via support vs interaction reasoning.</td><td><code>VLM-MASK-REASONER/stage2_vlm_analysis.py#L318-L376</code></td></tr>
+            <tr><td>Quadmask semantics</td><td>Declares final mask values: <code>0</code> primary, <code>63</code> overlap, <code>127</code> affected, <code>255</code> background.</td><td><code>VLM-MASK-REASONER/stage4_combine_masks.py#L1-L12</code></td></tr>
+            <tr><td>Quadmask merge rule</td><td>Implements exact merge rules from black/grey masks: <code>(0,255)-&gt;0</code>, <code>(255,127)-&gt;127</code>, <code>(0,127)-&gt;63</code>, <code>(255,255)-&gt;255</code>.</td><td><code>VLM-MASK-REASONER/stage4_combine_masks.py#L20-L49</code></td></tr>
+            <tr><td>First-frame heuristic</td><td>Clears near-grey pixels on frame 0 to background so affected-region mask values do not survive in the first exported frame.</td><td><code>VLM-MASK-REASONER/stage4_combine_masks.py#L101-L115</code></td></tr>
+            <tr><td>Prompt source used at inference</td><td>Loads only <code>prompt.json["bg"]</code> as the text condition.</td><td><code>videox_fun/utils/utils.py#L335-L337</code></td></tr>
+            <tr><td>Input video loading</td><td>Reads <code>input_video.mp4</code>, truncates to <code>max_video_length</code>, converts to tensor, and resizes to configured dimensions.</td><td><code>videox_fun/utils/utils.py#L338-L343</code></td></tr>
+            <tr><td>Quadmask ingestion and requantization</td><td>Reads <code>quadmask_*.mp4</code> and re-quantizes interpolated values back to <code>0/63/127/255</code>.</td><td><code>videox_fun/utils/utils.py#L374-L393</code></td></tr>
+            <tr><td>Mask polarity inversion</td><td>Applies <code>255 - input_mask</code> after requantization before normalization.</td><td><code>videox_fun/utils/utils.py#L387-L393</code></td></tr>
+            <tr><td>Temporal padding</td><td>Pads video and mask to satisfy temporal window requirements before inference.</td><td><code>videox_fun/utils/utils.py#L409-L413</code></td></tr>
+            <tr><td>Inference config: quadmask mode</td><td>Enables quadmask inference and VAE-mask conditioning by default.</td><td><code>config/quadmask_cogvideox.py#L33-L49</code></td></tr>
+            <tr><td>Inference config: generation hyperparameters</td><td>Sets <code>guidance_scale=1.0</code>, <code>num_inference_steps=50</code>, <code>temporal_window_size=85</code>.</td><td><code>config/quadmask_cogvideox.py#L40-L47</code></td></tr>
+            <tr><td>Inference config: system/GPU assumptions</td><td>Defaults execution to <code>cuda</code> with offload-oriented memory configuration.</td><td><code>config/quadmask_cogvideox.py#L52-L76</code></td></tr>
+            <tr><td>Custom transformer loading</td><td>Loads CogVideoX transformer with <code>use_vae_mask</code> / <code>stack_mask</code> options.</td><td><code>inference/cogvideox_fun/predict_v2v.py#L40-L50</code></td></tr>
+            <tr><td>Patch embedding adaptation</td><td>Adapts <code>patch_embed.proj.weight</code> when checkpoint and current mask-conditioned channel counts differ.</td><td><code>inference/cogvideox_fun/predict_v2v.py#L62-L85</code></td></tr>
+            <tr><td>Video + mask assembly for inference</td><td>Calls <code>get_video_mask_input(...)</code> with quadmask mode enabled.</td><td><code>inference/cogvideox_fun/predict_v2v.py#L139-L157</code></td></tr>
+            <tr><td>Actual forward pass inputs</td><td>Feeds prompt, video, mask video, guidance scale, denoise strength, and VAE-mask flags into the pipeline.</td><td><code>inference/cogvideox_fun/predict_v2v.py#L172-L184</code></td></tr>
+            <tr><td>Step-count discrepancy</td><td>Pass-1 inference hardcodes <code>30</code> denoising steps even though config exposes <code>50</code>.</td><td><code>inference/cogvideox_fun/predict_v2v.py#L177-L179</code> and <code>config/quadmask_cogvideox.py#L43-L45</code></td></tr>
+            <tr><td>Inpaint mask preprocessing</td><td>Preprocesses <code>mask_video</code> and discretizes it according to trimask/binary logic inside the inpaint pipeline.</td><td><code>videox_fun/pipeline/pipeline_cogvideox_fun_inpaint.py#L970-L989</code></td></tr>
+            <tr><td>VAE-mask conditioning path</td><td>Encodes mask/video into latent conditioning and concatenates them as <code>inpaint_latents</code> when the transformer expects extra channels.</td><td><code>videox_fun/pipeline/pipeline_cogvideox_fun_inpaint.py#L991-L1063</code></td></tr>
+            <tr><td>CFG / Imagen-style guidance</td><td>Uses classifier-free guidance and explicitly documents the formulation as Imagen Eq. 2 style guidance.</td><td><code>videox_fun/pipeline/pipeline_cogvideox_fun_inpaint.py#L806-L809</code>, <code>#L888-L892</code>, <code>#L1148-L1155</code></td></tr>
+            <tr><td>Temporal multidiffusion behavior</td><td>Switches to temporal multidiffusion when latent sequence exceeds the temporal window.</td><td><code>videox_fun/pipeline/pipeline_cogvideox_fun_inpaint.py#L1092-L1100</code></td></tr>
+            <tr><td>Pass-2 refinement concept</td><td>Defines second-pass inference using warped noise produced from pass-1 outputs.</td><td><code>inference/cogvideox_fun/inference_with_pass1_warped_noise.py#L1-L16</code></td></tr>
+            <tr><td>Pass-1 output discovery</td><td>Finds pass-1 output videos matching the expected naming convention.</td><td><code>inference/cogvideox_fun/inference_with_pass1_warped_noise.py#L42-L72</code></td></tr>
+            <tr><td>Warped-noise generation</td><td>Runs <code>make_warped_noise.py</code> on pass-1 video outputs and caches <code>noises.npy</code>.</td><td><code>inference/cogvideox_fun/inference_with_pass1_warped_noise.py#L75-L136</code></td></tr>
+            <tr><td>Warped-noise resize into latent space</td><td>Loads cached noise, converts layout if needed, resizes temporally/spatially, and converts it to a torch tensor.</td><td><code>inference/cogvideox_fun/inference_with_pass1_warped_noise.py#L139-L196</code></td></tr>
+            <tr><td>Pass-2 default hyperparameters</td><td>Uses <code>guidance_scale=6.0</code>, <code>num_inference_steps=50</code>, and <code>temporal_window_size=85</code> by default.</td><td><code>inference/cogvideox_fun/inference_with_pass1_warped_noise.py#L219-L239</code></td></tr>
+            <tr><td>Training-side quadmask requantization</td><td>Re-quantizes interpolated masks back to discrete quadmask levels in the training dataloader.</td><td><code>scripts/cogvideox_fun/train.py#L1234-L1243</code></td></tr>
+            <tr><td>Warped-noise training support</td><td>Supports carrying warped noise through batch collation for training-time ablations.</td><td><code>scripts/cogvideox_fun/train_warped_noise.py#L1257-L1287</code>, <code>#L1319-L1323</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-    <div class="card">
+    <section class="card">
       <h2>Critical Audit Notes</h2>
       <ul>
-        <li><strong>Prompting mismatch risk:</strong> the inference prompt is a clean-background description from <code>prompt.json["bg"]</code>, not a natural-language removal command.</li>
-        <li><strong>Mask-value sensitivity:</strong> the code repeatedly requantizes masks back to discrete values, suggesting the method is sensitive to interpolation/compression artifacts.</li>
-        <li><strong>Engineering heuristic:</strong> the first-frame grey suppression is a practical fix that may materially affect output behavior.</li>
-        <li><strong>Reproducibility mismatch:</strong> pass-1 inference uses <code>30</code> denoising steps while the config advertises <code>50</code>.</li>
-        <li><strong>Conditioning complexity:</strong> checkpoint loading is not plug-and-play; patch-embedding weights may be remapped when mask-conditioned channels differ.</li>
+        <li><strong>Prompting mismatch risk:</strong> the model uses a clean-background description rather than a direct removal command.</li>
+        <li><strong>Mask-value sensitivity:</strong> repeated re-quantization suggests the method is sensitive to interpolation and codec artifacts.</li>
+        <li><strong>Hidden heuristic:</strong> the first-frame grey suppression is practical but may materially affect behavior.</li>
+        <li><strong>Checkpoint adaptation:</strong> mask-conditioned transformer channels require special loading logic instead of naive checkpoint restoration.</li>
       </ul>
-    </div>
-
-    <div class="card">
-      <h2>Suggested Reading Order for Auditing</h2>
-      <ol>
-        <li><code>README.md</code> — overall pipeline and usage</li>
-        <li><code>VLM-MASK-REASONER/stage2_vlm_analysis.py</code> — affected-region reasoning</li>
-        <li><code>VLM-MASK-REASONER/stage4_combine_masks.py</code> — quadmask construction</li>
-        <li><code>videox_fun/utils/utils.py</code> — prompt/mask/video loading</li>
-        <li><code>inference/cogvideox_fun/predict_v2v.py</code> — pass-1 inference path</li>
-        <li><code>videox_fun/pipeline/pipeline_cogvideox_fun_inpaint.py</code> — actual conditioning mechanics</li>
-        <li><code>inference/cogvideox_fun/inference_with_pass1_warped_noise.py</code> — pass-2 refinement</li>
-      </ol>
-    </div>
+      <p class="footer-note">Prepared as a Shadow-PI audit companion for reproducibility and implementation tracing.</p>
+    </section>
   </div>
 </body>
 </html>

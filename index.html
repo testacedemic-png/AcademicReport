@@ -5,31 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Academic Reports</title>
   <style>
-    body { font: 16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; color: #111827; }
-    .card { border: 1px solid #d1d5db; border-radius: 14px; padding: 20px; margin: 16px 0; }
-    a { color: #2563eb; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    h1,h2 { line-height: 1.2; }
+    :root {
+      --bg:#f7f8fb; --surface:#ffffff; --surface-soft:#f5f7fb; --text:#1f2937; --muted:#5e6a7f;
+      --border:#dbe3ef; --accent:#2563eb; --accent-soft:#eaf1ff; --shadow:0 10px 30px rgba(15,23,42,.07);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#f9fbff 0%,#f4f7fb 100%);color:var(--text);font:16px/1.7 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+    .shell{max-width:1100px;margin:0 auto;padding:28px}
+    .hero,.card{background:var(--surface);border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow)}
+    .hero{padding:34px;margin-bottom:22px;background:linear-gradient(135deg,#ffffff 0%,#f5f9ff 100%)}
+    .card{padding:22px;margin:18px 0}
+    .eyebrow{display:inline-block;background:var(--accent-soft);color:var(--accent);border:1px solid #d6e5ff;border-radius:999px;padding:6px 12px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-bottom:14px}
+    h1,h2{line-height:1.2;margin:0 0 12px} h1{font-size:34px;letter-spacing:-.02em} h2{font-size:24px}
+    p,li{color:var(--muted)} a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:22px}
+    .report{background:var(--surface-soft);border:1px solid var(--border);border-radius:18px;padding:20px}
+    .links a{display:block;margin:10px 0;font-weight:600}
   </style>
 </head>
 <body>
-  <h1>Academic Reports</h1>
-  <p>Published reports for VOID: Video Object and Interaction Deletion.</p>
+  <div class="shell">
+    <section class="hero">
+      <div class="eyebrow">Academic Reports</div>
+      <h1>VOID: Published Research Reports</h1>
+      <p>This site hosts polished report pages for the paper <strong>“VOID: Video Object and Interaction Deletion”</strong>, including a code-to-paper mapping and an experiment implementation planning report.</p>
+    </section>
 
-  <div class="card">
-    <h2>Experiment Code Change Report</h2>
-    <ul>
-      <li><a href="./EXPERIMENT_CODE_CHANGE_REPORT.html">HTML report</a></li>
-      <li><a href="https://github.com/testacedemic-png/AcademicReport/blob/main/EXPERIMENT_CODE_CHANGE_REPORT.md">Markdown on GitHub</a></li>
-    </ul>
-  </div>
+    <section class="grid">
+      <article class="report">
+        <h2>Experiment Code Change Report</h2>
+        <p>A practical guide mapping proposed experiments to the exact code areas, likely line ranges, and expected engineering effort.</p>
+        <div class="links">
+          <a href="./EXPERIMENT_CODE_CHANGE_REPORT.html">Open HTML report</a>
+          <a href="https://github.com/testacedemic-png/AcademicReport/blob/main/EXPERIMENT_CODE_CHANGE_REPORT.md">View Markdown on GitHub</a>
+        </div>
+      </article>
 
-  <div class="card">
-    <h2>Code to Paper Mapping</h2>
-    <ul>
-      <li><a href="./CODE_TO_PAPER_MAPPING.html">HTML report</a></li>
-      <li><a href="https://github.com/testacedemic-png/AcademicReport/blob/main/CODE_TO_PAPER_MAPPING.md">Markdown on GitHub</a></li>
-    </ul>
+      <article class="report">
+        <h2>Code to Paper Mapping</h2>
+        <p>A structured mapping between the paper’s methodology and the implementation details in the public VOID repository.</p>
+        <div class="links">
+          <a href="./CODE_TO_PAPER_MAPPING.html">Open HTML report</a>
+          <a href="https://github.com/testacedemic-png/AcademicReport/blob/main/CODE_TO_PAPER_MAPPING.md">View Markdown on GitHub</a>
+        </div>
+      </article>
+    </section>
   </div>
 </body>
 </html>
